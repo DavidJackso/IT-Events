@@ -24,10 +24,15 @@ namespace Service
         }
         public bool EventDataisValid(string name,string type,string eventloacation,string organizator,string description,DateTime eventdate) 
         {
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(type) || string.IsNullOrEmpty(eventloacation) || string.IsNullOrEmpty(organizator) || string.IsNullOrEmpty(description)|| eventdate >= DateTime.Now)  
-            {
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(type) || string.IsNullOrEmpty(eventloacation) || string.IsNullOrEmpty(organizator) || string.IsNullOrEmpty(description))  
+            {                
                 MessageBox.Show("Заполните все данные мероприятия", "Неверно введены данные");
                 return false; 
+            }
+            else if (eventdate <= DateTime.Now)
+            {
+                MessageBox.Show("Неверное указанна дата проведения", "Ошибка");
+                return false;
             }
             return true;
         }

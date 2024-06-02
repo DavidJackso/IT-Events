@@ -50,7 +50,5 @@ namespace Service
                 adduser.AddUser();
             }
         }
-
-
     }
 }

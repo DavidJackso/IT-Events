@@ -29,24 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.member_tabcntrl = new Guna.UI2.WinForms.Guna2TabControl();
             this.profile = new System.Windows.Forms.TabPage();
             this.changeprofiledata_button = new Guna.UI2.WinForms.Guna2Button();
             this.saveprofiledata_button = new Guna.UI2.WinForms.Guna2Button();
-            this.organization_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.email_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.lastname_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.firstname_textbox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -54,6 +53,14 @@
             this.details_button = new Guna.UI2.WinForms.Guna2Button();
             this.signup_button = new Guna.UI2.WinForms.Guna2Button();
             this.events_datagrid = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.event_id_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.event_name_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.event_type_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.event_location_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.event_date_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.event_end_regestration_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.event_organizator_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.event_regestration_status_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.events = new System.Windows.Forms.TabPage();
             this.user_events_datagrid = new Guna.UI2.WinForms.Guna2DataGridView();
             this.myeventid_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,17 +74,10 @@
             this.healder_panel = new System.Windows.Forms.Panel();
             this.ApplicationName = new System.Windows.Forms.Label();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.exit_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.event_id_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.event_name_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.event_type_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.event_location_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.event_date_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.event_end_regestration_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.event_organizator_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.event_regestration_status_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.event_location = new System.Windows.Forms.Label();
+            this.organization_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.member_tabcntrl.SuspendLayout();
             this.profile.SuspendLayout();
             this.events_tabpage.SuspendLayout();
@@ -126,9 +126,9 @@
             // profile
             // 
             this.profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            this.profile.Controls.Add(this.organization_textbox);
             this.profile.Controls.Add(this.changeprofiledata_button);
             this.profile.Controls.Add(this.saveprofiledata_button);
-            this.profile.Controls.Add(this.organization_textbox);
             this.profile.Controls.Add(this.email_textbox);
             this.profile.Controls.Add(this.lastname_textbox);
             this.profile.Controls.Add(this.firstname_textbox);
@@ -149,7 +149,7 @@
             this.changeprofiledata_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(223)))), ((int)(((byte)(67)))));
             this.changeprofiledata_button.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.changeprofiledata_button.ForeColor = System.Drawing.Color.White;
-            this.changeprofiledata_button.Location = new System.Drawing.Point(26, 298);
+            this.changeprofiledata_button.Location = new System.Drawing.Point(26, 228);
             this.changeprofiledata_button.Name = "changeprofiledata_button";
             this.changeprofiledata_button.Size = new System.Drawing.Size(200, 45);
             this.changeprofiledata_button.TabIndex = 5;
@@ -166,38 +166,12 @@
             this.saveprofiledata_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(223)))), ((int)(((byte)(67)))));
             this.saveprofiledata_button.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.saveprofiledata_button.ForeColor = System.Drawing.Color.White;
-            this.saveprofiledata_button.Location = new System.Drawing.Point(26, 247);
+            this.saveprofiledata_button.Location = new System.Drawing.Point(26, 287);
             this.saveprofiledata_button.Name = "saveprofiledata_button";
             this.saveprofiledata_button.Size = new System.Drawing.Size(200, 45);
             this.saveprofiledata_button.TabIndex = 4;
             this.saveprofiledata_button.Text = "Сохранить";
             this.saveprofiledata_button.Click += new System.EventHandler(this.saveprofiledata_button_Click);
-            // 
-            // organization_textbox
-            // 
-            this.organization_textbox.Animated = true;
-            this.organization_textbox.AutoCompleteCustomSource.AddRange(new string[] {
-            "lol",
-            "kek",
-            "lol",
-            "ha"});
-            this.organization_textbox.BorderRadius = 10;
-            this.organization_textbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.organization_textbox.DefaultText = "";
-            this.organization_textbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.organization_textbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.organization_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.organization_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.organization_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.organization_textbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.organization_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.organization_textbox.Location = new System.Drawing.Point(26, 187);
-            this.organization_textbox.Name = "organization_textbox";
-            this.organization_textbox.PasswordChar = '\0';
-            this.organization_textbox.PlaceholderText = "Название организации";
-            this.organization_textbox.SelectedText = "";
-            this.organization_textbox.Size = new System.Drawing.Size(200, 36);
-            this.organization_textbox.TabIndex = 3;
             // 
             // email_textbox
             // 
@@ -217,7 +191,7 @@
             this.email_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.email_textbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.email_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.email_textbox.Location = new System.Drawing.Point(26, 134);
+            this.email_textbox.Location = new System.Drawing.Point(26, 128);
             this.email_textbox.Name = "email_textbox";
             this.email_textbox.PasswordChar = '\0';
             this.email_textbox.PlaceholderText = "Email";
@@ -243,7 +217,7 @@
             this.lastname_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lastname_textbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.lastname_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lastname_textbox.Location = new System.Drawing.Point(26, 79);
+            this.lastname_textbox.Location = new System.Drawing.Point(26, 78);
             this.lastname_textbox.Name = "lastname_textbox";
             this.lastname_textbox.PasswordChar = '\0';
             this.lastname_textbox.PlaceholderText = "Фамилия";
@@ -304,6 +278,7 @@
             this.details_button.Size = new System.Drawing.Size(200, 45);
             this.details_button.TabIndex = 6;
             this.details_button.Text = "Подробнее";
+            this.details_button.Click += new System.EventHandler(this.details_button_Click);
             // 
             // signup_button
             // 
@@ -328,19 +303,19 @@
             this.events_datagrid.AllowUserToDeleteRows = false;
             this.events_datagrid.AllowUserToResizeColumns = false;
             this.events_datagrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.events_datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.events_datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.events_datagrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
             this.events_datagrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.events_datagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.events_datagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.events_datagrid.ColumnHeadersHeight = 17;
             this.events_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.events_datagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -352,14 +327,14 @@
             this.event_end_regestration_column,
             this.event_organizator_column,
             this.event_regestration_status_column});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.events_datagrid.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.events_datagrid.DefaultCellStyle = dataGridViewCellStyle17;
             this.events_datagrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.events_datagrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(60)))));
             this.events_datagrid.Location = new System.Drawing.Point(5, 5);
@@ -367,20 +342,20 @@
             this.events_datagrid.Name = "events_datagrid";
             this.events_datagrid.ReadOnly = true;
             this.events_datagrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.events_datagrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.events_datagrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.events_datagrid.RowHeadersVisible = false;
             this.events_datagrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            this.events_datagrid.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            this.events_datagrid.RowsDefaultCellStyle = dataGridViewCellStyle19;
             this.events_datagrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
             this.events_datagrid.RowTemplate.Height = 25;
             this.events_datagrid.RowTemplate.ReadOnly = true;
@@ -409,10 +384,81 @@
             this.events_datagrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.events_datagrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // event_id_column
+            // 
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.event_id_column.DefaultCellStyle = dataGridViewCellStyle15;
+            this.event_id_column.HeaderText = "ID";
+            this.event_id_column.Name = "event_id_column";
+            this.event_id_column.ReadOnly = true;
+            this.event_id_column.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.event_id_column.Visible = false;
+            // 
+            // event_name_column
+            // 
+            this.event_name_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.event_name_column.DefaultCellStyle = dataGridViewCellStyle16;
+            this.event_name_column.FillWeight = 635.7867F;
+            this.event_name_column.HeaderText = "Название мероприятия";
+            this.event_name_column.MinimumWidth = 50;
+            this.event_name_column.Name = "event_name_column";
+            this.event_name_column.ReadOnly = true;
+            this.event_name_column.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.event_name_column.Width = 151;
+            // 
+            // event_type_column
+            // 
+            this.event_type_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.event_type_column.FillWeight = 19.03555F;
+            this.event_type_column.HeaderText = "Тип мероприятия";
+            this.event_type_column.Name = "event_type_column";
+            this.event_type_column.ReadOnly = true;
+            // 
+            // event_location_column
+            // 
+            this.event_location_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.event_location_column.FillWeight = 19.03555F;
+            this.event_location_column.HeaderText = "Место проведения";
+            this.event_location_column.Name = "event_location_column";
+            this.event_location_column.ReadOnly = true;
+            // 
+            // event_date_column
+            // 
+            this.event_date_column.FillWeight = 19.03555F;
+            this.event_date_column.HeaderText = "Дата:Время проведения";
+            this.event_date_column.Name = "event_date_column";
+            this.event_date_column.ReadOnly = true;
+            // 
+            // event_end_regestration_column
+            // 
+            this.event_end_regestration_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.event_end_regestration_column.FillWeight = 19.03555F;
+            this.event_end_regestration_column.HeaderText = "Закрытие регистрации";
+            this.event_end_regestration_column.Name = "event_end_regestration_column";
+            this.event_end_regestration_column.ReadOnly = true;
+            // 
+            // event_organizator_column
+            // 
+            this.event_organizator_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.event_organizator_column.FillWeight = 19.03555F;
+            this.event_organizator_column.HeaderText = "Организатор";
+            this.event_organizator_column.Name = "event_organizator_column";
+            this.event_organizator_column.ReadOnly = true;
+            // 
+            // event_regestration_status_column
+            // 
+            this.event_regestration_status_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.event_regestration_status_column.FillWeight = 19.03555F;
+            this.event_regestration_status_column.HeaderText = "Регистрация";
+            this.event_regestration_status_column.Name = "event_regestration_status_column";
+            this.event_regestration_status_column.ReadOnly = true;
+            // 
             // events
             // 
             this.events.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
             this.events.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.events.Controls.Add(this.event_location);
             this.events.Controls.Add(this.user_events_datagrid);
             this.events.Location = new System.Drawing.Point(104, 4);
             this.events.Name = "events";
@@ -427,19 +473,19 @@
             this.user_events_datagrid.AllowUserToDeleteRows = false;
             this.user_events_datagrid.AllowUserToResizeColumns = false;
             this.user_events_datagrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            this.user_events_datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            this.user_events_datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
             this.user_events_datagrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
             this.user_events_datagrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.user_events_datagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.user_events_datagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.user_events_datagrid.ColumnHeadersHeight = 17;
             this.user_events_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.user_events_datagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -451,14 +497,14 @@
             this.myevent_close_regestration_column,
             this.myevent_oraganizator_column,
             this.myevent_status});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.user_events_datagrid.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.user_events_datagrid.DefaultCellStyle = dataGridViewCellStyle22;
             this.user_events_datagrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.user_events_datagrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(60)))));
             this.user_events_datagrid.Location = new System.Drawing.Point(5, 5);
@@ -466,20 +512,20 @@
             this.user_events_datagrid.Name = "user_events_datagrid";
             this.user_events_datagrid.ReadOnly = true;
             this.user_events_datagrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.user_events_datagrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.user_events_datagrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.user_events_datagrid.RowHeadersVisible = false;
             this.user_events_datagrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            this.user_events_datagrid.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            this.user_events_datagrid.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.user_events_datagrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
             this.user_events_datagrid.RowTemplate.Height = 25;
             this.user_events_datagrid.RowTemplate.ReadOnly = true;
@@ -608,12 +654,6 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // guna2BorderlessForm2
-            // 
-            this.guna2BorderlessForm2.ContainerControl = this;
-            this.guna2BorderlessForm2.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm2.TransparentWhileDrag = true;
-            // 
             // exit_button
             // 
             this.exit_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -649,75 +689,42 @@
             this.logo.TabIndex = 1;
             this.logo.TabStop = false;
             // 
-            // event_id_column
+            // event_location
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.event_id_column.DefaultCellStyle = dataGridViewCellStyle3;
-            this.event_id_column.HeaderText = "ID";
-            this.event_id_column.Name = "event_id_column";
-            this.event_id_column.ReadOnly = true;
-            this.event_id_column.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.event_id_column.Visible = false;
+            this.event_location.AutoSize = true;
+            this.event_location.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.event_location.ForeColor = System.Drawing.Color.White;
+            this.event_location.Location = new System.Drawing.Point(6, 401);
+            this.event_location.Name = "event_location";
+            this.event_location.Size = new System.Drawing.Size(181, 17);
+            this.event_location.TabIndex = 8;
+            this.event_location.Text = "Ближайшее мероприятие:";
             // 
-            // event_name_column
+            // organization_textbox
             // 
-            this.event_name_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.event_name_column.DefaultCellStyle = dataGridViewCellStyle4;
-            this.event_name_column.FillWeight = 635.7867F;
-            this.event_name_column.HeaderText = "Название мероприятия";
-            this.event_name_column.MinimumWidth = 50;
-            this.event_name_column.Name = "event_name_column";
-            this.event_name_column.ReadOnly = true;
-            this.event_name_column.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.event_name_column.Width = 151;
-            // 
-            // event_type_column
-            // 
-            this.event_type_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.event_type_column.FillWeight = 19.03555F;
-            this.event_type_column.HeaderText = "Тип мероприятия";
-            this.event_type_column.Name = "event_type_column";
-            this.event_type_column.ReadOnly = true;
-            // 
-            // event_location_column
-            // 
-            this.event_location_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.event_location_column.FillWeight = 19.03555F;
-            this.event_location_column.HeaderText = "Место проведения";
-            this.event_location_column.Name = "event_location_column";
-            this.event_location_column.ReadOnly = true;
-            // 
-            // event_date_column
-            // 
-            this.event_date_column.FillWeight = 19.03555F;
-            this.event_date_column.HeaderText = "Дата:Время проведения";
-            this.event_date_column.Name = "event_date_column";
-            this.event_date_column.ReadOnly = true;
-            // 
-            // event_end_regestration_column
-            // 
-            this.event_end_regestration_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.event_end_regestration_column.FillWeight = 19.03555F;
-            this.event_end_regestration_column.HeaderText = "Закрытие регистрации";
-            this.event_end_regestration_column.Name = "event_end_regestration_column";
-            this.event_end_regestration_column.ReadOnly = true;
-            // 
-            // event_organizator_column
-            // 
-            this.event_organizator_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.event_organizator_column.FillWeight = 19.03555F;
-            this.event_organizator_column.HeaderText = "Организатор";
-            this.event_organizator_column.Name = "event_organizator_column";
-            this.event_organizator_column.ReadOnly = true;
-            // 
-            // event_regestration_status_column
-            // 
-            this.event_regestration_status_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.event_regestration_status_column.FillWeight = 19.03555F;
-            this.event_regestration_status_column.HeaderText = "Регистрация";
-            this.event_regestration_status_column.Name = "event_regestration_status_column";
-            this.event_regestration_status_column.ReadOnly = true;
+            this.organization_textbox.Animated = true;
+            this.organization_textbox.AutoCompleteCustomSource.AddRange(new string[] {
+            "lol",
+            "kek",
+            "lol",
+            "ha"});
+            this.organization_textbox.BorderRadius = 10;
+            this.organization_textbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.organization_textbox.DefaultText = "";
+            this.organization_textbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.organization_textbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.organization_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.organization_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.organization_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.organization_textbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.organization_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.organization_textbox.Location = new System.Drawing.Point(26, 178);
+            this.organization_textbox.Name = "organization_textbox";
+            this.organization_textbox.PasswordChar = '\0';
+            this.organization_textbox.PlaceholderText = "Название организации";
+            this.organization_textbox.SelectedText = "";
+            this.organization_textbox.Size = new System.Drawing.Size(200, 36);
+            this.organization_textbox.TabIndex = 6;
             // 
             // MemberForm
             // 
@@ -728,6 +735,7 @@
             this.Controls.Add(this.member_tabcntrl);
             this.Controls.Add(this.healder_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MemberForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OraganizatorForm";
@@ -737,6 +745,7 @@
             this.events_tabpage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.events_datagrid)).EndInit();
             this.events.ResumeLayout(false);
+            this.events.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.user_events_datagrid)).EndInit();
             this.healder_panel.ResumeLayout(false);
             this.healder_panel.PerformLayout();
@@ -756,7 +765,6 @@
         private System.Windows.Forms.PictureBox logo;
         private Guna.UI2.WinForms.Guna2TextBox email_textbox;
         private Guna.UI2.WinForms.Guna2TextBox lastname_textbox;
-        private Guna.UI2.WinForms.Guna2TextBox organization_textbox;
         private Guna.UI2.WinForms.Guna2Button changeprofiledata_button;
         private Guna.UI2.WinForms.Guna2Button saveprofiledata_button;
         private Guna.UI2.WinForms.Guna2DataGridView user_events_datagrid;
@@ -765,7 +773,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView events_datagrid;
         private Guna.UI2.WinForms.Guna2Button details_button;
         private Guna.UI2.WinForms.Guna2Button signup_button;
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm2;
         private System.Windows.Forms.DataGridViewTextBoxColumn myeventid_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn myevent_name_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn myevent_type_column;
@@ -782,5 +789,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn event_end_regestration_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn event_organizator_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn event_regestration_status_column;
+        private System.Windows.Forms.Label event_location;
+        private Guna.UI2.WinForms.Guna2TextBox organization_textbox;
     }
 }

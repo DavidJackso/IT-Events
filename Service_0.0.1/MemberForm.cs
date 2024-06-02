@@ -1,4 +1,5 @@
 ﻿using Service;
+using Service_0._0._1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -85,18 +86,27 @@ namespace Service
 
         private void signup_button_Click(object sender, EventArgs e)
         {
-            if(activeuser.PersonalInfo == null)
+            if (activeuser.PersonalInfo == null)
             {
                 MessageBox.Show("Заполните персональную информацию!", "Ошибка регистрации на мероприятие");
-                return; 
+                return;
             }
-            if (events_datagrid[event_regestration_status_column.Index,events_datagrid.CurrentCell.RowIndex].Value.ToString() == "закрыта")
+            else if (events_datagrid[event_regestration_status_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString() == "закрыта")
             {
                 MessageBox.Show("Регистрация на мероприятие закрыта!", "Ошибка регистрации на мероприятие");
                 return;
             }
-            eventsBase.SignUpinEvent(Guid.Parse(events_datagrid[event_id_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString()));
-            eventsBase.WriteUserEventsinDataGrid(user_events_datagrid);
+            else
+            {
+                eventsBase.SignUpinEvent(Guid.Parse(events_datagrid[event_id_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString()));
+                eventsBase.WriteUserEventsinDataGrid(user_events_datagrid);
+            }
+        }
+
+        private void details_button_Click(object sender, EventArgs e)
+        {
+            Form form = new EventDetailsForm(eventsBase.SearchEvent(Guid.Parse(events_datagrid[event_id_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString())));
+            form.ShowDialog();
         }
     }
 }

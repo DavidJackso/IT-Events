@@ -20,6 +20,10 @@ namespace Service
         static string pathtobaseevents = "data/bases/events.json";
         static string pathtobasuseridtoeventsid = "data/bases/usertoevents.json";
 
+        public EventsBase()
+        {
+
+        }
         public EventsBase(User activeuser)
         {
             activeUser = activeuser;
@@ -135,13 +139,23 @@ namespace Service
             }
             SaveBase();
         }
+        public void WriteMembers(Event ev,DataGridView dgv)
+        {
+            if (ev.Members.Count == 0)
+                MessageBox.Show("На ваше мероприятие еще никто не записан");
+            else
+            {
+                foreach (var i in ev.Members)
+                    dgv.Rows.Add(i.FirstName, i.LastName, i.Email);
+            }
+        }
         public void SignUpinEvent(Guid id)
         {
 
             Event ev = Events[id];
             if (UserstoEvents.ContainsKey(activeUser.Id))
             {
-                if (!UserstoEvents[activeUser.Id].Contains(ev.Id))
+                if (UserstoEvents[activeUser.Id].Contains(ev.Id))
                 {
                     MessageBox.Show("Вы уже зарегестрированы на данное мероприятие", "Ошибка");
                     return;

@@ -1,4 +1,5 @@
 ﻿using Service;
+using Service_0._0._1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -95,26 +96,32 @@ namespace Service
                 save_event_button.Visible = true;
                 add_new_event_button.Visible = false;
                 rechange_event_button.Visible = false;
+                members_list_button.Visible = false;
             }
         }
 
         private void rechange_event_button_Click(object sender, EventArgs e)
         {
-            add_event_mp.Visible = true;
-            save_event_button.Visible = true;
-            add_new_event_button.Visible = false;
-            rechange_event_button.Visible = false;
+            if (events_datagrid.Rows.Count > 0)
+            {
+                add_event_mp.Visible = true;
+                save_event_button.Visible = true;
+                add_new_event_button.Visible = false;
+                rechange_event_button.Visible = false;
+                members_list_button.Visible = false;
 
-            int rowindex = events_datagrid.CurrentCell.RowIndex;
-            Event ev = eventsBase.SearchEvent(Guid.Parse(events_datagrid[eventid_column.Index, rowindex].Value.ToString()));
-            event_name_textbox.Text = ev.Name;
-            event_type_textbox.Text = ev.Type;
-            event_data_textbox.Text = ev.EventData.ToString();
-            event_regestrationend_textbox.Text = ev.DataEndRegestration.ToString();
-            event_organizator_textbox.Text = ev.Organizator;
-            event_location_textbox.Text = ev.EventLocation;
-            event_description_textbox.Text = ev.Description;
-            
+                int rowindex = events_datagrid.CurrentCell.RowIndex;
+                Event ev = eventsBase.SearchEvent(Guid.Parse(events_datagrid[eventid_column.Index, rowindex].Value.ToString()));
+                event_name_textbox.Text = ev.Name;
+                event_type_textbox.Text = ev.Type;
+                event_data_textbox.Text = ev.EventData.ToString("dd.MM.yyyy HH:mm");
+                event_regestrationend_textbox.Text = ev.DataEndRegestration.ToString("dd.MM.yyyy HH:mm");
+                event_organizator_textbox.Text = ev.Organizator;
+                event_location_textbox.Text = ev.EventLocation;
+                event_description_textbox.Text = ev.Description;
+            }
+            else
+                MessageBox.Show("Создайте мероприятие", "Ошибка");
         }
 
         private void save_event_button_Click(object sender, EventArgs e)
@@ -129,16 +136,23 @@ namespace Service
                 {
                     Event ev = new Event(eventid, event_name_textbox.Text, event_type_textbox.Text, eventdata, closeregesration, true, event_organizator_textbox.Text, event_location_textbox.Text, event_description_textbox.Text, null);
                     eventsBase.WriteUserEventsinDataGrid(events_datagrid);
+
                     add_event_mp.Visible = false;
                     save_event_button.Visible = false;
                     add_new_event_button.Visible = true;
                     rechange_event_button.Visible = true;
+                    members_list_button.Visible = true;
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Допущена ошибка в полях заполнения времени!\nЗначения времени обязаны заполняться в формате день.месяц.год:час:минуты", "Ошибка в заполнение данных");
+                MessageBox.Show("Допущена ошибка в полях заполнения времени!\nЗначения времени обязаны заполняться в формате день.месяц.год час:минуты", "Ошибка в заполнение данных");
             }
+        }
+
+        private void members_list_button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
