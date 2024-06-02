@@ -63,13 +63,13 @@ namespace Service
         {
             if (Users.ContainsKey(loginuser.Username))
             {
-                User user = SearchUser(loginuser);
+                User user = GetUser(loginuser);
                 if (HashingPassword(loginuser.Password) == user.Password)
                     return true;
             }
             return false;
         }
-        public User SearchUser(User needuser)
+        public User GetUser(User needuser)
         {
             if (Users == null)
                 Users = new Dictionary<string, User>();
@@ -83,7 +83,10 @@ namespace Service
         }
         private string HashingPassword(string password)
         {
-            return Convert.ToBase64String(MD5.Create().ComputeHash(ASCIIEncoding.ASCII.GetBytes(password)));
+            MD5 md5 = MD5.Create();
+            byte[] inputBytes = Encoding.ASCII.GetBytes(password);
+            byte[] hashBytes = md5.ComputeHash(inputBytes);
+            return Convert.ToBase64String(hashBytes);
         }
     }
     public class User

@@ -111,7 +111,7 @@ namespace Service
                 members_list_button.Visible = false;
 
                 int rowindex = events_datagrid.CurrentCell.RowIndex;
-                Event ev = eventsBase.SearchEvent(Guid.Parse(events_datagrid[eventid_column.Index, rowindex].Value.ToString()));
+                Event ev = eventsBase.GetEventId(Guid.Parse(events_datagrid[eventid_column.Index, rowindex].Value.ToString()));
                 event_name_textbox.Text = ev.Name;
                 event_type_textbox.Text = ev.Type;
                 event_data_textbox.Text = ev.EventData.ToString("dd.MM.yyyy HH:mm");
@@ -135,6 +135,7 @@ namespace Service
                 if (new ValidData().EventDataisValid(event_name_textbox.Text, event_type_textbox.Text, event_organizator_textbox.Text, event_location_textbox.Text, event_description_textbox.Text,eventdata))
                 {
                     Event ev = new Event(eventid, event_name_textbox.Text, event_type_textbox.Text, eventdata, closeregesration, true, event_organizator_textbox.Text, event_location_textbox.Text, event_description_textbox.Text, null);
+                    eventsBase.AddEvent(ev);
                     eventsBase.WriteUserEventsinDataGrid(events_datagrid);
 
                     add_event_mp.Visible = false;

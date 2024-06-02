@@ -13,7 +13,7 @@ namespace Service
 {
     public class EventsBase
     {
-        private User activeUser { get; }
+        private readonly User activeUser;
         public static Dictionary<Guid, Event> Events;
         public static Dictionary<Guid, List<Guid>> UserstoEvents;
         public static List<Guid> UserEvents = new List<Guid>();
@@ -27,7 +27,7 @@ namespace Service
         public EventsBase(User activeuser)
         {
             activeUser = activeuser;
-            ReadEvents();
+            LoadEvents();
         }
 
         private void SaveBase()
@@ -41,7 +41,7 @@ namespace Service
             serializer.Serialize(writer, UserstoEvents);
             writer.Close();
         }
-        private void ReadEvents()
+        private void LoadEvents()
         {
             if (File.Exists(pathtobaseevents))
             {
@@ -86,7 +86,7 @@ namespace Service
                     item.Value.StatusRegestration = false;
             }
         }
-        public void AddNewEvent(Event ev)
+        public void AddEvent(Event ev)
         {
             Events.Add(ev.Id, ev);
 
@@ -106,7 +106,7 @@ namespace Service
         {
             Events[id] = ev;
         }
-        public Event SearchEvent(Guid id)
+        public Event GetEventId(Guid id)
         {
             return Events[id];
         }
@@ -192,6 +192,16 @@ namespace Service
     }
     public class Event
     {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public DateTime EventData { get; set; }
+        public DateTime DataEndRegestration { get; set; }
+        public bool StatusRegestration { get; set; }
+        public string Organizator { get; set; }
+        public string EventLocation { get; set; }
+        public string Description { get; set; }
+        public List<PersonalInformation> Members { get; set; }
         public Event(Guid id, string name, string type, DateTime eventData, DateTime dataEndRegestration, bool statusRegestration, string organizator, string eventLocation, string description, List<PersonalInformation> members)
         {
             Id = id;
@@ -205,17 +215,6 @@ namespace Service
             Description = description;
             Members = members;
         }
-
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public DateTime EventData { get; set; }
-        public DateTime DataEndRegestration { get; set; }
-        public bool StatusRegestration { get; set; }
-        public string Organizator { get; set; }
-        public string EventLocation { get; set; }
-        public string Description { get; set; }
-        public List<PersonalInformation> Members { get; set; }
     }
 }
 

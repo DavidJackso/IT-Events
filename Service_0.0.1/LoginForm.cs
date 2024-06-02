@@ -19,7 +19,7 @@ namespace Service
             User loginuser = new User(username_textbox_login.Text, password_textbox_login.Text, "", Guid.NewGuid());
             if (new UsersBase().SucessLogin(loginuser))
             {
-                loginuser = new UsersBase().SearchUser(loginuser);
+                loginuser = new UsersBase().GetUser(loginuser);
                 if (loginuser.Role == "organizator")
                 {
                     OraganizatorForm f = new OraganizatorForm(loginuser);

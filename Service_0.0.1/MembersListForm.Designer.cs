@@ -37,8 +37,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.healder_panel = new System.Windows.Forms.Panel();
-            this.ApplicationName = new System.Windows.Forms.Label();
             this.exit_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ApplicationName = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
             this.members_datagrid = new Guna.UI2.WinForms.Guna2DataGridView();
             this.first_name_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,19 +69,6 @@
             this.healder_panel.Size = new System.Drawing.Size(400, 26);
             this.healder_panel.TabIndex = 5;
             // 
-            // ApplicationName
-            // 
-            this.ApplicationName.AutoSize = true;
-            this.ApplicationName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(25)))));
-            this.ApplicationName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ApplicationName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ApplicationName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ApplicationName.Location = new System.Drawing.Point(51, 0);
-            this.ApplicationName.Name = "ApplicationName";
-            this.ApplicationName.Size = new System.Drawing.Size(80, 21);
-            this.ApplicationName.TabIndex = 1;
-            this.ApplicationName.Text = "IT-Events";
-            // 
             // exit_button
             // 
             this.exit_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -102,6 +89,19 @@
             this.exit_button.Size = new System.Drawing.Size(28, 26);
             this.exit_button.TabIndex = 1;
             this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
+            // 
+            // ApplicationName
+            // 
+            this.ApplicationName.AutoSize = true;
+            this.ApplicationName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(25)))));
+            this.ApplicationName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ApplicationName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ApplicationName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.ApplicationName.Location = new System.Drawing.Point(51, 0);
+            this.ApplicationName.Name = "ApplicationName";
+            this.ApplicationName.Size = new System.Drawing.Size(80, 21);
+            this.ApplicationName.TabIndex = 1;
+            this.ApplicationName.Text = "IT-Events";
             // 
             // logo
             // 

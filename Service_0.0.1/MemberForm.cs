@@ -105,7 +105,7 @@ namespace Service
 
         private void details_button_Click(object sender, EventArgs e)
         {
-            Form form = new EventDetailsForm(eventsBase.SearchEvent(Guid.Parse(events_datagrid[event_id_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString())));
+            Form form = new EventDetailsForm(eventsBase.GetEventId(Guid.Parse(events_datagrid[event_id_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString())));
             form.ShowDialog();
         }
     }

@@ -104,7 +104,7 @@ namespace Service
             if (regex.Matches(Username).Count != 0)
                 result += "Нельзя использовать символы табуляции\n";
            
-            if (!(new UsersBase().SearchUser(new User(Username,null,null,Guid.Empty))is null))
+            if (!(new UsersBase().GetUser(new User(Username,null,null,Guid.Empty))is null))
                 result += "Данный логин уже занят";
 
             if (result == "")
