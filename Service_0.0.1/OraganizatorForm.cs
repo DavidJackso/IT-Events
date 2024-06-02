@@ -122,10 +122,10 @@ namespace Service
             DateTime closeregesration,eventdata;
             try
             {
-                closeregesration = DateTime.ParseExact(event_regestrationend_textbox.Text, $"dd.MM.yyyy:HH:mm", null);
-                eventdata = DateTime.ParseExact(event_data_textbox.Text, $"dd.MM.yyyy:HH:mm", null);
+                closeregesration = DateTime.ParseExact(event_regestrationend_textbox.Text, $"dd.MM.yyyy HH:mm", null);
+                eventdata = DateTime.ParseExact(event_data_textbox.Text, $"dd.MM.yyyy HH:mm", null);
                 Guid eventid = Guid.NewGuid();
-                if (new ValidData().EventDataisValid(event_name_textbox.Text, event_type_textbox.Text, event_organizator_textbox.Text, event_location_textbox.Text, event_description_textbox.Text))
+                if (new ValidData().EventDataisValid(event_name_textbox.Text, event_type_textbox.Text, event_organizator_textbox.Text, event_location_textbox.Text, event_description_textbox.Text,eventdata))
                 {
                     Event ev = new Event(eventid, event_name_textbox.Text, event_type_textbox.Text, eventdata, closeregesration, true, event_organizator_textbox.Text, event_location_textbox.Text, event_description_textbox.Text, null);
                     eventsBase.WriteUserEventsinDataGrid(events_datagrid);

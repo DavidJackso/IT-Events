@@ -47,18 +47,16 @@ namespace Service
         }
         private void ReadUsers()
         {
-            try
+            if (File.Exists(pathtobase))
             {
                 StreamReader stream = new StreamReader(pathtobase);
-                string line = stream.ReadToEnd();
-                Users = JsonConvert.DeserializeObject<Dictionary<string, User>>(line);
-                if (Users == null) { Users = new Dictionary<string, User>(); }
+                Users = JsonConvert.DeserializeObject<Dictionary<string, User>>(stream.ReadToEnd());
                 stream.Close();
             }
-            catch (FileNotFoundException)
+            else
             {
                 Users = new Dictionary<string, User>();
-                File.Create(pathtobase).Close();
+                MessageBox.Show("Файл с данными пользователей не найден");
             }
         }
         public bool SucessLogin(User loginuser)

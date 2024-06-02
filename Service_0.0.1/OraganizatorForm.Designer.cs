@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OraganizatorForm));
             this.organizator_tabcntrl = new Guna.UI2.WinForms.Guna2TabControl();
             this.login = new System.Windows.Forms.TabPage();
@@ -65,11 +65,11 @@
             this.event_regestrationend_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.event_data_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.healder_panel = new System.Windows.Forms.Panel();
-            this.exit_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.ApplicationName = new System.Windows.Forms.Label();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.exit_button = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.organizator_tabcntrl.SuspendLayout();
             this.login.SuspendLayout();
             this.regestration.SuspendLayout();
@@ -179,7 +179,7 @@
             this.organization_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.organization_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.organization_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.organization_textbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.organization_textbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.organization_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.organization_textbox.Location = new System.Drawing.Point(26, 187);
             this.organization_textbox.Name = "organization_textbox";
@@ -205,7 +205,7 @@
             this.email_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.email_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.email_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.email_textbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.email_textbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.email_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.email_textbox.Location = new System.Drawing.Point(26, 134);
             this.email_textbox.Name = "email_textbox";
@@ -231,7 +231,7 @@
             this.lastname_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lastname_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.lastname_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lastname_textbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lastname_textbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.lastname_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lastname_textbox.Location = new System.Drawing.Point(26, 79);
             this.lastname_textbox.Name = "lastname_textbox";
@@ -257,7 +257,7 @@
             this.firstname_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.firstname_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.firstname_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.firstname_textbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.firstname_textbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.firstname_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.firstname_textbox.Location = new System.Drawing.Point(26, 28);
             this.firstname_textbox.Name = "firstname_textbox";
@@ -340,19 +340,19 @@
             this.events_datagrid.AllowUserToDeleteRows = false;
             this.events_datagrid.AllowUserToResizeColumns = false;
             this.events_datagrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.events_datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            this.events_datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.events_datagrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
             this.events_datagrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.events_datagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.events_datagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.events_datagrid.ColumnHeadersHeight = 17;
             this.events_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.events_datagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -364,14 +364,14 @@
             this.event_close_regestration_column,
             this.event_oraganizator_column,
             this.event_status});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.events_datagrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.events_datagrid.DefaultCellStyle = dataGridViewCellStyle13;
             this.events_datagrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.events_datagrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(60)))));
             this.events_datagrid.Location = new System.Drawing.Point(6, 6);
@@ -379,20 +379,20 @@
             this.events_datagrid.Name = "events_datagrid";
             this.events_datagrid.ReadOnly = true;
             this.events_datagrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.events_datagrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.events_datagrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.events_datagrid.RowHeadersVisible = false;
             this.events_datagrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            this.events_datagrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
+            this.events_datagrid.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.events_datagrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
             this.events_datagrid.RowTemplate.Height = 25;
             this.events_datagrid.RowTemplate.ReadOnly = true;
@@ -513,7 +513,7 @@
             this.event_description_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.event_description_textbox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.event_description_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.event_description_textbox.Location = new System.Drawing.Point(686, 29);
+            this.event_description_textbox.Location = new System.Drawing.Point(683, 29);
             this.event_description_textbox.Multiline = true;
             this.event_description_textbox.Name = "event_description_textbox";
             this.event_description_textbox.PasswordChar = '\0';
@@ -539,7 +539,7 @@
             this.event_type_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.event_type_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.event_type_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.event_type_textbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.event_type_textbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.event_type_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.event_type_textbox.Location = new System.Drawing.Point(216, 29);
             this.event_type_textbox.Name = "event_type_textbox";
@@ -591,7 +591,7 @@
             this.event_name_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.event_name_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.event_name_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.event_name_textbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.event_name_textbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.event_name_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.event_name_textbox.Location = new System.Drawing.Point(10, 29);
             this.event_name_textbox.Name = "event_name_textbox";
@@ -643,14 +643,14 @@
             this.event_regestrationend_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.event_regestrationend_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.event_regestrationend_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.event_regestrationend_textbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.event_regestrationend_textbox.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.event_regestrationend_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.event_regestrationend_textbox.Location = new System.Drawing.Point(422, 107);
             this.event_regestrationend_textbox.Name = "event_regestrationend_textbox";
             this.event_regestrationend_textbox.PasswordChar = '\0';
             this.event_regestrationend_textbox.PlaceholderText = "Конец Регистрации DD.MM.YYYY:HH:MM";
             this.event_regestrationend_textbox.SelectedText = "";
-            this.event_regestrationend_textbox.Size = new System.Drawing.Size(248, 36);
+            this.event_regestrationend_textbox.Size = new System.Drawing.Size(255, 36);
             this.event_regestrationend_textbox.TabIndex = 9;
             // 
             // event_data_textbox
@@ -669,14 +669,14 @@
             this.event_data_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.event_data_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.event_data_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.event_data_textbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.event_data_textbox.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.event_data_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.event_data_textbox.Location = new System.Drawing.Point(422, 29);
             this.event_data_textbox.Name = "event_data_textbox";
             this.event_data_textbox.PasswordChar = '\0';
             this.event_data_textbox.PlaceholderText = "Время проведения DD.MM.YYYY:HH:MM";
             this.event_data_textbox.SelectedText = "";
-            this.event_data_textbox.Size = new System.Drawing.Size(248, 36);
+            this.event_data_textbox.Size = new System.Drawing.Size(255, 36);
             this.event_data_textbox.TabIndex = 10;
             // 
             // healder_panel
@@ -692,6 +692,26 @@
             this.healder_panel.Name = "healder_panel";
             this.healder_panel.Size = new System.Drawing.Size(1143, 26);
             this.healder_panel.TabIndex = 3;
+            // 
+            // ApplicationName
+            // 
+            this.ApplicationName.AutoSize = true;
+            this.ApplicationName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(25)))));
+            this.ApplicationName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ApplicationName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ApplicationName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.ApplicationName.Location = new System.Drawing.Point(51, 0);
+            this.ApplicationName.Name = "ApplicationName";
+            this.ApplicationName.Size = new System.Drawing.Size(90, 22);
+            this.ApplicationName.TabIndex = 1;
+            this.ApplicationName.Text = "IT-Events";
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 10;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // exit_button
             // 
@@ -714,19 +734,6 @@
             this.exit_button.TabIndex = 1;
             this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
             // 
-            // ApplicationName
-            // 
-            this.ApplicationName.AutoSize = true;
-            this.ApplicationName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(25)))));
-            this.ApplicationName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ApplicationName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ApplicationName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ApplicationName.Location = new System.Drawing.Point(51, 0);
-            this.ApplicationName.Name = "ApplicationName";
-            this.ApplicationName.Size = new System.Drawing.Size(80, 21);
-            this.ApplicationName.TabIndex = 1;
-            this.ApplicationName.Text = "IT-Events";
-            // 
             // logo
             // 
             this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -740,13 +747,6 @@
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 1;
             this.logo.TabStop = false;
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.BorderRadius = 10;
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // OraganizatorForm
             // 

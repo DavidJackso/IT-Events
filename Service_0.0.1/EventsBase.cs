@@ -14,8 +14,8 @@ namespace Service
     public class EventsBase
     {
         private User activeUser { get; }
-        public static Dictionary<Guid, Event> Events = new Dictionary<Guid, Event>();
-        public static Dictionary<Guid, List<Guid>> UserstoEvents = new Dictionary<Guid, List<Guid>>();
+        public static Dictionary<Guid, Event> Events;
+        public static Dictionary<Guid, List<Guid>> UserstoEvents;
         public static List<Guid> UserEvents = new List<Guid>();
         static string pathtobaseevents = "data/bases/events.json";
         static string pathtobasuseridtoeventsid = "data/bases/usertoevents.json";
@@ -23,7 +23,6 @@ namespace Service
         public EventsBase(User activeuser)
         {
             activeUser = activeuser;
-            ReadUserstoEvents();
             ReadEvents();
         }
 
@@ -40,16 +39,25 @@ namespace Service
         }
         private void ReadEvents()
         {
-            StreamReader read = new StreamReader(pathtobaseevents);
-            Events = JsonConvert.DeserializeObject<Dictionary<Guid, Event>>(read.ReadToEnd());
-            read.Close();
-            CheckRegesrationEnd();
+            if (File.Exists(pathtobaseevents))
+            {
+                StreamReader read = new StreamReader(pathtobaseevents);
+                Events = JsonConvert.DeserializeObject<Dictionary<Guid, Event>>(read.ReadToEnd());
+                read.Close();
+                CheckRegesrationEnd();
+                ReadUserstoEvents();
+            }
+            else
+            {
+                Events = new Dictionary<Guid, Event>();
+
+            }
         }
         private void ReadUserstoEvents()
         {
-            StreamReader read = new StreamReader(pathtobasuseridtoeventsid);
-            try
+            if (File.Exists(pathtobasuseridtoeventsid))
             {
+                StreamReader read = new StreamReader(pathtobasuseridtoeventsid);
                 UserstoEvents = JsonConvert.DeserializeObject<Dictionary<Guid, List<Guid>>>(read.ReadToEnd());
                 read.Close();
                 if (UserstoEvents != null)
@@ -63,17 +71,8 @@ namespace Service
                 else
                 {
                     UserstoEvents = new Dictionary<Guid, List<Guid>>();
-                }
+                }           
             }
-            catch (FileLoadException)
-            {
-                read.Close();
-                File.Create(pathtobasuseridtoeventsid);
-                MessageBox.Show("Файл с данными об мероприятиях не найден\n Список мероприятий очещен", "Ошибка");
-                UserstoEvents = new Dictionary<Guid, List<Guid>>();
-                UserEvents = new List<Guid>();
-            }
-            read.Close();
         }
         public void CheckRegesrationEnd()
         {
