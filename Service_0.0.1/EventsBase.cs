@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Service
@@ -163,6 +164,18 @@ namespace Service
             }
 
         }
+        public Event NextEvent(Guid id)
+        {
+            Event next = Events[UserstoEvents[id][0]];
+            foreach (var e in UserstoEvents[id])
+            {
+                Event et = Events[e];
+                if (next.EventData >= et.EventData)
+                    next = et;
+            }
+            return next;
+
+        }
         private bool CheckRegestrationStatus(DateTime regestarationclosedata)
         {
             if (regestarationclosedata <= DateTime.Now)
@@ -202,6 +215,10 @@ namespace Service
             EventLocation = eventLocation;
             Description = description;
             Members = members;
+        }
+        public override string ToString()
+        {
+            return $"{Name} {EventData}";
         }
     }
 }

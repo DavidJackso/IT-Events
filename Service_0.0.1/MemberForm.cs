@@ -11,9 +11,10 @@ namespace Service
         EventsBase eventsBase;
         public MemberForm(User activeuser)
         {
+            InitializeComponent();
             this.activeuser = activeuser;
             eventsBase = new EventsBase(activeuser);
-            InitializeComponent();
+            next_event_label.Text = eventsBase.NextEvent(activeuser.Id).ToString();
         }
         private void exit_button_Click(object sender, EventArgs e)
         {
@@ -92,6 +93,7 @@ namespace Service
             {
                 eventsBase.SignUpinEvent(Guid.Parse(events_datagrid[event_id_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString()));
                 eventsBase.WriteUserEventsinDataGrid(user_events_datagrid);
+                next_event_label.Text = eventsBase.NextEvent(activeuser.Id).ToString();
             }
         }
 
