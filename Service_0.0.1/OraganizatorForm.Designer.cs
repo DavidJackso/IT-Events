@@ -44,6 +44,8 @@
             this.lastname_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.firstname_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.regestration = new System.Windows.Forms.TabPage();
+            this.cancel_button = new Guna.UI2.WinForms.Guna2Button();
+            this.members_list_button = new Guna.UI2.WinForms.Guna2Button();
             this.save_event_button = new Guna.UI2.WinForms.Guna2Button();
             this.rechange_event_button = new Guna.UI2.WinForms.Guna2Button();
             this.add_new_event_button = new Guna.UI2.WinForms.Guna2Button();
@@ -62,15 +64,14 @@
             this.event_location_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.event_name_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.event_organizator_textbox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.event_regestrationend_textbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.event_regestrationclose_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.event_data_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.healder_panel = new System.Windows.Forms.Panel();
+            this.exit_button = new Guna.UI2.WinForms.Guna2ImageButton();
             this.ApplicationName = new System.Windows.Forms.Label();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.members_list_button = new Guna.UI2.WinForms.Guna2Button();
-            this.exit_button = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.organizator_tabcntrl.SuspendLayout();
             this.login.SuspendLayout();
             this.regestration.SuspendLayout();
@@ -145,7 +146,7 @@
             this.changeprofiledata_button.Size = new System.Drawing.Size(200, 45);
             this.changeprofiledata_button.TabIndex = 5;
             this.changeprofiledata_button.Text = "Изменить";
-            this.changeprofiledata_button.Click += new System.EventHandler(this.changeprofiledata_button_Click);
+            this.changeprofiledata_button.Click += new System.EventHandler(this.Changeprofiledata_button_Click);
             // 
             // saveprofiledata_button
             // 
@@ -162,7 +163,7 @@
             this.saveprofiledata_button.Size = new System.Drawing.Size(200, 45);
             this.saveprofiledata_button.TabIndex = 4;
             this.saveprofiledata_button.Text = "Сохранить";
-            this.saveprofiledata_button.Click += new System.EventHandler(this.saveprofiledata_button_Click);
+            this.saveprofiledata_button.Click += new System.EventHandler(this.Saveprofiledata_button_Click);
             // 
             // organization_textbox
             // 
@@ -272,6 +273,7 @@
             // 
             this.regestration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
             this.regestration.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.regestration.Controls.Add(this.cancel_button);
             this.regestration.Controls.Add(this.members_list_button);
             this.regestration.Controls.Add(this.save_event_button);
             this.regestration.Controls.Add(this.rechange_event_button);
@@ -285,6 +287,40 @@
             this.regestration.TabIndex = 1;
             this.regestration.Text = "Мои мероприятия";
             // 
+            // cancel_button
+            // 
+            this.cancel_button.BorderRadius = 10;
+            this.cancel_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.cancel_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.cancel_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.cancel_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.cancel_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(223)))), ((int)(((byte)(67)))));
+            this.cancel_button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cancel_button.ForeColor = System.Drawing.Color.White;
+            this.cancel_button.Location = new System.Drawing.Point(634, 476);
+            this.cancel_button.Name = "cancel_button";
+            this.cancel_button.Size = new System.Drawing.Size(187, 45);
+            this.cancel_button.TabIndex = 17;
+            this.cancel_button.Text = "Отмена";
+            this.cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
+            // 
+            // members_list_button
+            // 
+            this.members_list_button.BorderRadius = 10;
+            this.members_list_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.members_list_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.members_list_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.members_list_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.members_list_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(223)))), ((int)(((byte)(67)))));
+            this.members_list_button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.members_list_button.ForeColor = System.Drawing.Color.White;
+            this.members_list_button.Location = new System.Drawing.Point(428, 476);
+            this.members_list_button.Name = "members_list_button";
+            this.members_list_button.Size = new System.Drawing.Size(200, 45);
+            this.members_list_button.TabIndex = 16;
+            this.members_list_button.Text = "Просмотреть участников";
+            this.members_list_button.Click += new System.EventHandler(this.Members_list_button_Click);
+            // 
             // save_event_button
             // 
             this.save_event_button.BorderRadius = 10;
@@ -295,12 +331,12 @@
             this.save_event_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(223)))), ((int)(((byte)(67)))));
             this.save_event_button.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.save_event_button.ForeColor = System.Drawing.Color.White;
-            this.save_event_button.Location = new System.Drawing.Point(797, 476);
+            this.save_event_button.Location = new System.Drawing.Point(827, 476);
             this.save_event_button.Name = "save_event_button";
-            this.save_event_button.Size = new System.Drawing.Size(200, 45);
+            this.save_event_button.Size = new System.Drawing.Size(183, 45);
             this.save_event_button.TabIndex = 14;
             this.save_event_button.Text = "Сохранить";
-            this.save_event_button.Click += new System.EventHandler(this.save_event_button_Click);
+            this.save_event_button.Click += new System.EventHandler(this.Save_event_button_Click);
             // 
             // rechange_event_button
             // 
@@ -317,7 +353,7 @@
             this.rechange_event_button.Size = new System.Drawing.Size(200, 45);
             this.rechange_event_button.TabIndex = 6;
             this.rechange_event_button.Text = "Изменить мероприятие";
-            this.rechange_event_button.Click += new System.EventHandler(this.rechange_event_button_Click);
+            this.rechange_event_button.Click += new System.EventHandler(this.Rechange_event_button_Click);
             // 
             // add_new_event_button
             // 
@@ -334,7 +370,7 @@
             this.add_new_event_button.Size = new System.Drawing.Size(200, 45);
             this.add_new_event_button.TabIndex = 5;
             this.add_new_event_button.Text = "Создать новое мероприятие";
-            this.add_new_event_button.Click += new System.EventHandler(this.add_new_event_button_Click);
+            this.add_new_event_button.Click += new System.EventHandler(this.Add_new_event_button_Click);
             // 
             // events_datagrid
             // 
@@ -496,7 +532,7 @@
             this.add_event_mp.Controls.Add(this.event_location_textbox);
             this.add_event_mp.Controls.Add(this.event_name_textbox);
             this.add_event_mp.Controls.Add(this.event_organizator_textbox);
-            this.add_event_mp.Controls.Add(this.event_regestrationend_textbox);
+            this.add_event_mp.Controls.Add(this.event_regestrationclose_textbox);
             this.add_event_mp.Controls.Add(this.event_data_textbox);
             this.add_event_mp.Location = new System.Drawing.Point(6, 304);
             this.add_event_mp.Name = "add_event_mp";
@@ -629,31 +665,31 @@
             this.event_organizator_textbox.Size = new System.Drawing.Size(200, 36);
             this.event_organizator_textbox.TabIndex = 12;
             // 
-            // event_regestrationend_textbox
+            // event_regestrationclose_textbox
             // 
-            this.event_regestrationend_textbox.Animated = true;
-            this.event_regestrationend_textbox.AutoCompleteCustomSource.AddRange(new string[] {
+            this.event_regestrationclose_textbox.Animated = true;
+            this.event_regestrationclose_textbox.AutoCompleteCustomSource.AddRange(new string[] {
             "lol",
             "kek",
             "lol",
             "ha"});
-            this.event_regestrationend_textbox.BorderRadius = 10;
-            this.event_regestrationend_textbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.event_regestrationend_textbox.DefaultText = "";
-            this.event_regestrationend_textbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.event_regestrationend_textbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.event_regestrationend_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.event_regestrationend_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.event_regestrationend_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.event_regestrationend_textbox.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.event_regestrationend_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.event_regestrationend_textbox.Location = new System.Drawing.Point(422, 107);
-            this.event_regestrationend_textbox.Name = "event_regestrationend_textbox";
-            this.event_regestrationend_textbox.PasswordChar = '\0';
-            this.event_regestrationend_textbox.PlaceholderText = "Конец Регистрации DD.MM.YYYY:HH:MM";
-            this.event_regestrationend_textbox.SelectedText = "";
-            this.event_regestrationend_textbox.Size = new System.Drawing.Size(255, 36);
-            this.event_regestrationend_textbox.TabIndex = 9;
+            this.event_regestrationclose_textbox.BorderRadius = 10;
+            this.event_regestrationclose_textbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.event_regestrationclose_textbox.DefaultText = "";
+            this.event_regestrationclose_textbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.event_regestrationclose_textbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.event_regestrationclose_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.event_regestrationclose_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.event_regestrationclose_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.event_regestrationclose_textbox.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.event_regestrationclose_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.event_regestrationclose_textbox.Location = new System.Drawing.Point(422, 107);
+            this.event_regestrationclose_textbox.Name = "event_regestrationclose_textbox";
+            this.event_regestrationclose_textbox.PasswordChar = '\0';
+            this.event_regestrationclose_textbox.PlaceholderText = "Конец Регистрации DD.MM.YYYY:HH:MM";
+            this.event_regestrationclose_textbox.SelectedText = "";
+            this.event_regestrationclose_textbox.Size = new System.Drawing.Size(255, 36);
+            this.event_regestrationclose_textbox.TabIndex = 9;
             // 
             // event_data_textbox
             // 
@@ -695,43 +731,6 @@
             this.healder_panel.Size = new System.Drawing.Size(1143, 26);
             this.healder_panel.TabIndex = 3;
             // 
-            // ApplicationName
-            // 
-            this.ApplicationName.AutoSize = true;
-            this.ApplicationName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(25)))));
-            this.ApplicationName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ApplicationName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ApplicationName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ApplicationName.Location = new System.Drawing.Point(51, 0);
-            this.ApplicationName.Name = "ApplicationName";
-            this.ApplicationName.Size = new System.Drawing.Size(90, 22);
-            this.ApplicationName.TabIndex = 1;
-            this.ApplicationName.Text = "IT-Events";
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.BorderRadius = 10;
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
-            // members_list_button
-            // 
-            this.members_list_button.BorderRadius = 10;
-            this.members_list_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.members_list_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.members_list_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.members_list_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.members_list_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(223)))), ((int)(((byte)(67)))));
-            this.members_list_button.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.members_list_button.ForeColor = System.Drawing.Color.White;
-            this.members_list_button.Location = new System.Drawing.Point(428, 476);
-            this.members_list_button.Name = "members_list_button";
-            this.members_list_button.Size = new System.Drawing.Size(200, 45);
-            this.members_list_button.TabIndex = 16;
-            this.members_list_button.Text = "Просмотреть участников";
-            this.members_list_button.Click += new System.EventHandler(this.members_list_button_Click);
-            // 
             // exit_button
             // 
             this.exit_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -751,7 +750,20 @@
             this.exit_button.ShadowDecoration.Color = System.Drawing.Color.BlanchedAlmond;
             this.exit_button.Size = new System.Drawing.Size(28, 26);
             this.exit_button.TabIndex = 1;
-            this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
+            this.exit_button.Click += new System.EventHandler(this.Exit_button_Click);
+            // 
+            // ApplicationName
+            // 
+            this.ApplicationName.AutoSize = true;
+            this.ApplicationName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(25)))));
+            this.ApplicationName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ApplicationName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ApplicationName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.ApplicationName.Location = new System.Drawing.Point(51, 0);
+            this.ApplicationName.Name = "ApplicationName";
+            this.ApplicationName.Size = new System.Drawing.Size(90, 22);
+            this.ApplicationName.TabIndex = 1;
+            this.ApplicationName.Text = "IT-Events";
             // 
             // logo
             // 
@@ -766,6 +778,13 @@
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 1;
             this.logo.TabStop = false;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 10;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // OraganizatorForm
             // 
@@ -812,7 +831,7 @@
         private Guna.UI2.WinForms.Guna2Button add_new_event_button;
         private Guna.UI2.WinForms.Guna2TextBox event_location_textbox;
         private Guna.UI2.WinForms.Guna2TextBox event_data_textbox;
-        private Guna.UI2.WinForms.Guna2TextBox event_regestrationend_textbox;
+        private Guna.UI2.WinForms.Guna2TextBox event_regestrationclose_textbox;
         private Guna.UI2.WinForms.Guna2TextBox event_type_textbox;
         private Guna.UI2.WinForms.Guna2TextBox event_name_textbox;
         private Guna.UI2.WinForms.Guna2TextBox event_organizator_textbox;
@@ -829,5 +848,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn event_status;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2Button members_list_button;
+        private Guna.UI2.WinForms.Guna2Button cancel_button;
     }
 }

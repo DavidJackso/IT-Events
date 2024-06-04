@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
-using Newtonsoft.Json;
-using System.Windows.Forms;
 using System.Security.Cryptography;
-using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
+using System.Windows.Forms;
 
 
 namespace Service
@@ -91,10 +90,10 @@ namespace Service
     }
     public class User
     {
-        public string Username { get; }
-        public string Password { get; set; }
-        public string Role { get; }
-        public Guid Id { get; }
+        public readonly string Username;
+        public string Password;
+        public readonly string Role;
+        public readonly Guid Id;
         public PersonalInformation PersonalInfo { get; set; }
         public User(string username, string password, string role, Guid id, PersonalInformation personal = null)
         {

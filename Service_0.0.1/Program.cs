@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Service   
+namespace Service
 {
     internal static class Program
     {

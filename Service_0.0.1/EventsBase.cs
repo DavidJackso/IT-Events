@@ -2,11 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI;
 using System.Windows.Forms;
 
 namespace Service
@@ -75,7 +70,7 @@ namespace Service
                 else
                 {
                     UserstoEvents = new Dictionary<Guid, List<Guid>>();
-                }           
+                }
             }
         }
         public void CheckRegesrationEnd()
@@ -139,15 +134,10 @@ namespace Service
             }
             SaveBase();
         }
-        public void WriteMembers(Event ev,DataGridView dgv)
+        public void WriteMembers(Event ev, DataGridView dgv)
         {
-            if (ev.Members.Count == 0)
-                MessageBox.Show("На ваше мероприятие еще никто не записан");
-            else
-            {
-                foreach (var i in ev.Members)
-                    dgv.Rows.Add(i.FirstName, i.LastName, i.Email);
-            }
+            foreach (var i in ev.Members)
+                dgv.Rows.Add(i.FirstName, i.LastName, i.Email);
         }
         public void SignUpinEvent(Guid id)
         {
@@ -161,23 +151,21 @@ namespace Service
                     return;
                 }
                 else
+                {
                     UserstoEvents[activeUser.Id].Add(ev.Id);
+                    ev.Members.Add(activeUser.PersonalInfo);
+                }
             }
             else
             {
                 List<Guid> ids = new List<Guid>() { ev.Id };
                 UserstoEvents.Add(activeUser.Id, ids);
             }
-            if(ev.Members == null) 
-                ev.Members = new List<PersonalInformation> { activeUser.PersonalInfo };
-            else 
-                ev.Members.Add(activeUser.PersonalInfo);
-            UserEvents.Add(id);
 
         }
         private bool CheckRegestrationStatus(DateTime regestarationclosedata)
         {
-            if(regestarationclosedata <= DateTime.Now) 
+            if (regestarationclosedata <= DateTime.Now)
                 return false;
             else
                 return true;
@@ -192,16 +180,16 @@ namespace Service
     }
     public class Event
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public DateTime EventData { get; set; }
-        public DateTime DataEndRegestration { get; set; }
-        public bool StatusRegestration { get; set; }
-        public string Organizator { get; set; }
-        public string EventLocation { get; set; }
-        public string Description { get; set; }
-        public List<PersonalInformation> Members { get; set; }
+        public readonly Guid Id;
+        public readonly string Name;
+        public readonly string Type;
+        public readonly DateTime EventData;
+        public readonly DateTime DataEndRegestration;
+        public bool StatusRegestration;
+        public readonly string Organizator;
+        public readonly string EventLocation;
+        public readonly string Description;
+        public List<PersonalInformation> Members;
         public Event(Guid id, string name, string type, DateTime eventData, DateTime dataEndRegestration, bool statusRegestration, string organizator, string eventLocation, string description, List<PersonalInformation> members)
         {
             Id = id;

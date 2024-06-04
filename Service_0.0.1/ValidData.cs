@@ -6,7 +6,7 @@ namespace Service
 {
     public class ValidData
     {
-        public ValidData() 
+        public ValidData()
         {
 
         }
@@ -17,17 +17,17 @@ namespace Service
 
         public bool RegestrationDataisValid(string username, string password, string repeatpassword, string role)
         {
-            if (UsernameisVlaid(username) && PasswordisValid(password,repeatpassword) && RoleisValid(role))
+            if (UsernameisVlaid(username) && PasswordisValid(password, repeatpassword) && RoleisValid(role))
                 return true;
 
             return false;
         }
-        public bool EventDataisValid(string name,string type,string eventloacation,string organizator,string description,DateTime eventdate) 
+        public bool EventDataisValid(string name, string type, string eventloacation, string organizator, string description, DateTime eventdate)
         {
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(type) || string.IsNullOrEmpty(eventloacation) || string.IsNullOrEmpty(organizator) || string.IsNullOrEmpty(description))  
-            {                
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(type) || string.IsNullOrEmpty(eventloacation) || string.IsNullOrEmpty(organizator) || string.IsNullOrEmpty(description))
+            {
                 MessageBox.Show("Заполните все данные мероприятия", "Неверно введены данные");
-                return false; 
+                return false;
             }
             else if (eventdate <= DateTime.Now)
             {
@@ -36,7 +36,7 @@ namespace Service
             }
             return true;
         }
-        private bool RoleisValid(string Role) 
+        private bool RoleisValid(string Role)
         {
             if (Role == null)
             {
@@ -45,7 +45,7 @@ namespace Service
             }
             return true;
         }
-        private bool PasswordisValid(string Password,string RepeatPassword) 
+        private bool PasswordisValid(string Password, string RepeatPassword)
         {
             Regex regex = new Regex("");
 
@@ -61,14 +61,14 @@ namespace Service
                 result += "Нельзя использовать символы табуляции\n";
 
             regex = new Regex(@"\d");
-            if (regex.Matches(Password).Count == 0 )
+            if (regex.Matches(Password).Count == 0)
                 result += "Пароль должен содержать цифры\n";
 
             regex = new Regex(@"[а-я]");
             if (regex.Matches(Password).Count != 0)
                 result += "Пароль не должен содержать килирицу\n";
 
-            regex = new Regex(@"\W");              
+            regex = new Regex(@"\W");
             if (regex.Matches(Password).Count == 0)
                 result += "Пароль должен содержать спец символы:('@' '#' '%' ...)\n";
 
@@ -95,7 +95,7 @@ namespace Service
             regex = new Regex(@"[а-я]");
             if (regex.Matches(Username).Count > 0)
                 result += "Логин не должен содержать килирицу\n\n";
-            
+
             regex = new Regex(@"\W");
             if (regex.Matches(Username).Count > 0)
                 result += "Логин не должен содержать спец символы:('@' '#' '%' ...)\n";
@@ -103,8 +103,8 @@ namespace Service
             regex = new Regex(@"\s");
             if (regex.Matches(Username).Count != 0)
                 result += "Нельзя использовать символы табуляции\n";
-           
-            if (!(new UsersBase().GetUser(new User(Username,null,null,Guid.Empty))is null))
+
+            if (!(new UsersBase().GetUser(new User(Username, null, null, Guid.Empty)) is null))
                 result += "Данный логин уже занят";
 
             if (result == "")
