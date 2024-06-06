@@ -73,6 +73,6 @@
 - Добавление новых функций и улучшение существующих.
 - Создание пользовательского интерфейса для взаимодействия с базами данных.
 
-Ссылка на текст курсовой работы: [Google Docs](https://docs.google.com/document/d/19zmvRFRe4nJ_96ThIgzWdJTo5EyV3qAp-dOMc-Trm4o/edit?usp=sharing)
+Ссылка на текст курсовой работы: [[Google Docs](https://docs.google.com/document/d/19zmvRFRe4nJ_96ThIgzWdJTo5EyV3qAp-dOMc-Trm4o/edit?usp=sharing)](https://docs.google.com/document/d/1pYo9X6U2FbAgEXuIn4xbFwZZEXhh-CJB/edit?usp=sharing&ouid=100407089651884769888&rtpof=true&sd=true)
 
 Ссылка на презентацию курсовой работы: [Google Slides](https://docs.google.com/presentation/d/1Mc-72WotIeDzLkksBb6EGWdEFHUbJaZM5IIv-eg6AAQ/edit?usp=sharing)****
