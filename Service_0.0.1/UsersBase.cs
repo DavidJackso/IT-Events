@@ -9,17 +9,17 @@ using System.Windows.Forms;
 
 namespace Service
 {
-    public class UsersBase
+    public class UsersDateBase
     {
         User ActiveUser;
         static Dictionary<string, User> Users;
         static string pathtobase = "data/bases/users.json";
-        public UsersBase(User activeuser)
+        public UsersDateBase(User activeuser)
         {
             ActiveUser = activeuser;
             ReadUsers();
         }
-        public UsersBase()
+        public UsersDateBase()
         {
             ReadUsers();
         }

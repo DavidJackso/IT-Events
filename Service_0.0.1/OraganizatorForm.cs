@@ -7,12 +7,12 @@ namespace Service
     public partial class OraganizatorForm : Form
     {
         User activeuser;
-        UsersBase usersBase = new UsersBase();
-        EventsBase eventsBase;
+        UsersDateBase usersBase = new UsersDateBase();
+        EventsDataBase eventsBase;
         public OraganizatorForm(User activeuser)
         {
             this.activeuser = activeuser;
-            eventsBase = new EventsBase(activeuser);
+            eventsBase = new EventsDataBase(activeuser);
             InitializeComponent();
         }
         private void Exit_button_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace Service
         private void Saveprofiledata_button_Click(object sender, EventArgs e)
         {
             RechangePersonalInfo(activeuser);
-            usersBase = new UsersBase(activeuser);
+            usersBase = new UsersDateBase(activeuser);
             usersBase.AddPersonalData();
             ReadPersonalInfo(activeuser);
             usersBase.AddPersonalData();

@@ -7,13 +7,13 @@ namespace Service
     public partial class MemberForm : Form
     {
         User activeuser;
-        UsersBase usersBase = new UsersBase();
-        EventsBase eventsBase;
+        UsersDateBase usersBase = new UsersDateBase();
+        EventsDataBase eventsBase;
         public MemberForm(User activeuser)
         {
             InitializeComponent();
             this.activeuser = activeuser;
-            eventsBase = new EventsBase(activeuser);
+            eventsBase = new EventsDataBase(activeuser);
             next_event_label.Text = eventsBase.NextEvent(activeuser.Id).ToString();
         }
         private void exit_button_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace Service
         private void saveprofiledata_button_Click(object sender, EventArgs e)
         {
             RechangePersonalInfo(activeuser);
-            usersBase = new UsersBase(activeuser);
+            usersBase = new UsersDateBase(activeuser);
             usersBase.AddPersonalData();
             ReadPersonalInfo(activeuser);
             usersBase.AddPersonalData();

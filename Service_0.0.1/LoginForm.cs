@@ -16,9 +16,9 @@ namespace Service
         private void login_button_Click(object sender, EventArgs e)
         {
             User loginuser = new User(username_textbox_login.Text, password_textbox_login.Text, "", Guid.NewGuid());
-            if (new UsersBase().SucessLogin(loginuser))
+            if (new UsersDateBase().SucessLogin(loginuser))
             {
-                loginuser = new UsersBase().GetUser(loginuser);
+                loginuser = new UsersDateBase().GetUser(loginuser);
                 if (loginuser.Role == "organizator")
                 {
                     OraganizatorForm f = new OraganizatorForm(loginuser);
@@ -45,7 +45,7 @@ namespace Service
             if (new ValidData().RegestrationDataisValid(username_textbox_reg.Text, password_textbox_reg.Text, repeatpass_textbox_reg.Text, role))
             {
                 User regestrationuser = new User(username_textbox_reg.Text, password_textbox_reg.Text, role, Guid.NewGuid());
-                UsersBase adduser = new UsersBase(regestrationuser);
+                UsersDateBase adduser = new UsersDateBase(regestrationuser);
                 adduser.AddUser();
             }
         }

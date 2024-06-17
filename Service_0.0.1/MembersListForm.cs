@@ -20,7 +20,7 @@ namespace Service_0._0._1
 
         private void MembersListForm_Load(object sender, EventArgs e)
         {
-            EventsBase evbase = new EventsBase();
+            EventsDataBase evbase = new EventsDataBase();
             evbase.WriteMembers(ev, members_datagrid);
         }
 

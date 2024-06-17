@@ -7,20 +7,20 @@ using System.Windows.Forms;
 
 namespace Service
 {
-    public class EventsBase
+    public class EventsDataBase
     {
         private readonly User activeUser;
-        public static Dictionary<Guid, Event> Events;
-        public static Dictionary<Guid, List<Guid>> UserstoEvents;
-        public static List<Guid> UserEvents = new List<Guid>();
-        static string pathtobaseevents = "data/bases/events.json";
-        static string pathtobasuseridtoeventsid = "data/bases/usertoevents.json";
+        private static Dictionary<Guid, Event> Events;
+        private static Dictionary<Guid, List<Guid>> UserstoEvents;
+        private static List<Guid> UserEvents = new List<Guid>();
+        private string pathtobaseevents = "data/bases/events.json";
+        private string pathtobasuseridtoeventsid = "data/bases/usertoevents.json";
 
-        public EventsBase()
+        public EventsDataBase()
         {
 
         }
-        public EventsBase(User activeuser)
+        public EventsDataBase(User activeuser)
         {
             activeUser = activeuser;
             LoadEvents();
