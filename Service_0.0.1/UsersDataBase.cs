@@ -14,6 +14,7 @@ namespace Service
         User ActiveUser;
         static Dictionary<string, User> Users;
         static string pathtobase = "data/bases/users.json";
+        static Server server = new Server();
         public UsersDateBase(User activeuser)
         {
             ActiveUser = activeuser;
@@ -26,10 +27,12 @@ namespace Service
 
         public void AddUser()
         {
+            server.DownloadBases();
             ActiveUser.Password = HashingPassword(ActiveUser.Password);
             Users.Add(ActiveUser.Username, ActiveUser);
             ReWrite();
             MessageBox.Show("Регистрация прошла успешно!");
+            server.UpdateBases();
         }
         private void ReWrite()
         {
@@ -41,8 +44,10 @@ namespace Service
         }
         public void AddPersonalData()
         {
+            server.DownloadBases();
             Users[ActiveUser.Username] = ActiveUser;
             ReWrite();
+            server.UpdateBases();
         }
         private void ReadUsers()
         {

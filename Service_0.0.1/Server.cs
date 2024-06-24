@@ -12,16 +12,16 @@ namespace Service
 {
     internal class Server
     {
-        static string pathtokey = "key.pub";
+        static string pathtokey = "data/server/key.pub";
         static FileStream stream = new FileStream(pathtokey, FileMode.Open, FileAccess.Read);
-        static PrivateKeyFile key = new PrivateKeyFile(stream);
+        static PrivateKeyFile key = new PrivateKeyFile(pathtokey);
         static ConnectionInfo connectionInfo = new ConnectionInfo("51.250.17.119","joseph",new PrivateKeyAuthenticationMethod("joseph", key));
-        static string[] bases = new string[]{"users.json","userstoevents.json","events.json"};
+        static string[] bases = new string[]{"data/bases/users.json", "data/bases/usertoevents.json", "data/bases/events.json" };
         public Server()
         {
 
         }
-        static public void DownloadBases()
+        public void DownloadBases()
         {
             try
             {
@@ -30,7 +30,7 @@ namespace Service
                 foreach (var item in bases)
                 {
                     Stream fileStream = File.Create(item);
-                    client.DownloadFile(item, fileStream);
+                    client.DownloadFile(item.Split('/')[2], fileStream);
                     fileStream.Close();
                 }
                 client.Disconnect();
@@ -40,7 +40,7 @@ namespace Service
                 MessageBox.Show("Не удаеться получить доступ к серверу.Проверьте подключение к интернету и обратитесь в службу тех поддержки");
             }
         }
-        static public void UpdateBases()
+        public void UpdateBases()
         {
             try
             {            
@@ -48,8 +48,8 @@ namespace Service
                 client.Connect();
                 foreach (var item in bases)
                 {
-                    Stream fileStream = File.Create(item);
-                    client.UploadFile(fileStream, item);
+                    Stream fileStream = File.OpenRead(item);
+                    client.UploadFile(fileStream, item.Split('/')[2]);
                     fileStream.Close();
                 }
                 client.Disconnect(); 

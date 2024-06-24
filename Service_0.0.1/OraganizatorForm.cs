@@ -117,7 +117,7 @@ namespace Service
                 Guid eventid = Guid.NewGuid();
                 if (new ValidData().EventDataisValid(event_name_textbox.Text, event_type_textbox.Text, event_organizator_textbox.Text, event_location_textbox.Text, event_description_textbox.Text, eventdata))
                 {
-                    Event ev = new Event(eventid, event_name_textbox.Text, event_type_textbox.Text, eventdata, closeregesration, true, event_organizator_textbox.Text, event_location_textbox.Text, event_description_textbox.Text, null);
+                    Event ev = new Event(eventid, event_name_textbox.Text, event_type_textbox.Text, eventdata, closeregesration, true, event_organizator_textbox.Text, event_location_textbox.Text, event_description_textbox.Text);
                     eventsBase.AddEvent(ev);
                     eventsBase.WriteUserEventsinDataGrid(events_datagrid);
 

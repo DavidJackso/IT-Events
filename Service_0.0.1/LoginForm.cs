@@ -8,6 +8,8 @@ namespace Service
         public login_form()
         {
             InitializeComponent();
+            Server server = new Server();
+            server.DownloadBases();
         }
         private void exit_button_Click(object sender, EventArgs e)
         {

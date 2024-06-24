@@ -9,12 +9,14 @@ namespace Service
 {
     public class EventsDataBase
     {
-        private readonly User activeUser;
-        private static Dictionary<Guid, Event> Events;
-        private static Dictionary<Guid, List<Guid>> UserstoEvents;
-        private static List<Guid> UserEvents = new List<Guid>();
-        private string pathtobaseevents = "data/bases/events.json";
-        private string pathtobasuseridtoeventsid = "data/bases/usertoevents.json";
+        readonly User activeUser;
+        static Dictionary<Guid, Event> Events;
+        static Dictionary<Guid, List<Guid>> UserstoEvents;
+        static List<Guid> UserEvents = new List<Guid>();
+        static string pathtobaseevents = "data/bases/events.json";
+        static string pathtobasuseridtoeventsid = "data/bases/usertoevents.json";
+        static Server server = new Server();
+
 
         public EventsDataBase()
         {
@@ -28,6 +30,7 @@ namespace Service
 
         private void SaveBase()
         {
+            server.DownloadBases();
             StreamWriter write = new StreamWriter(pathtobaseevents, false);
             JsonSerializer serializer = new JsonSerializer();
             serializer.Formatting = Formatting.Indented;
@@ -36,6 +39,7 @@ namespace Service
             StreamWriter writer = new StreamWriter(pathtobasuseridtoeventsid, false);
             serializer.Serialize(writer, UserstoEvents);
             writer.Close();
+            server.UpdateBases();
         }
         private void LoadEvents()
         {
@@ -55,6 +59,7 @@ namespace Service
         }
         private void ReadUserstoEvents()
         {
+            server.DownloadBases();
             if (File.Exists(pathtobasuseridtoeventsid))
             {
                 StreamReader read = new StreamReader(pathtobasuseridtoeventsid);
@@ -72,6 +77,7 @@ namespace Service
                 {
                     UserstoEvents = new Dictionary<Guid, List<Guid>>();
                 }
+                server.UpdateBases();
             }
         }
         public void CheckRegesrationEnd()
@@ -101,6 +107,7 @@ namespace Service
         public void ChangeEvent(Guid id, Event ev)
         {
             Events[id] = ev;
+            server.UpdateBases();
         }
         public Event GetEventId(Guid id)
         {
@@ -142,7 +149,7 @@ namespace Service
         }
         public void SignUpinEvent(Guid id)
         {
-
+            server.DownloadBases();
             Event ev = Events[id];
             if (UserstoEvents.ContainsKey(activeUser.Id))
             {
@@ -162,7 +169,7 @@ namespace Service
                 List<Guid> ids = new List<Guid>() { ev.Id };
                 UserstoEvents.Add(activeUser.Id, ids);
             }
-
+            server.UpdateBases();
         }
         public Event NextEvent(Guid id)
         {
@@ -203,7 +210,7 @@ namespace Service
         public readonly string EventLocation;
         public readonly string Description;
         public List<PersonalInformation> Members;
-        public Event(Guid id, string name, string type, DateTime eventData, DateTime dataEndRegestration, bool statusRegestration, string organizator, string eventLocation, string description, List<PersonalInformation> members)
+        public Event(Guid id, string name, string type, DateTime eventData, DateTime dataEndRegestration, bool statusRegestration, string organizator, string eventLocation, string description)
         {
             Id = id;
             Name = name;
@@ -214,7 +221,7 @@ namespace Service
             Organizator = organizator;
             EventLocation = eventLocation;
             Description = description;
-            Members = members;
+            Members = new List<PersonalInformation>();
         }
         public override string ToString()
         {
