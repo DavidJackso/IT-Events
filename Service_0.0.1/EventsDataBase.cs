@@ -173,7 +173,9 @@ namespace Service
         }
         public Event NextEvent(Guid id)
         {
-            Event next = Events[UserstoEvents[id][0]];
+            if(!UserstoEvents.ContainsKey(id))
+                UserstoEvents.Add(id, new List<Guid>());
+            Event next = null;
             foreach (var e in UserstoEvents[id])
             {
                 Event et = Events[e];

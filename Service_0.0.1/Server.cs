@@ -37,7 +37,7 @@ namespace Service
             }
             catch (Renci.SshNet.Common.SshAuthenticationException)
             {
-                MessageBox.Show("Не удаеться получить доступ к серверу.Проверьте подключение к интернету и обратитесь в службу тех поддержки");
+                MessageBox.Show("Не удается получить доступ к серверу. Проверьте подключение к интернету и обратитесь в службу тех поддержки.");
             }
         }
         public void UpdateBases()
@@ -56,7 +56,7 @@ namespace Service
             }
             catch (Renci.SshNet.Common.SshAuthenticationException)
             {
-                MessageBox.Show("Не удаеться получить доступ к серверу.Проверьте подключение к интернету и обратитесь в службу тех поддержки");
+                MessageBox.Show("Не удается получить доступ к серверу. Проверьте подключение к интернету и обратитесь в службу тех поддержки.");
             }
         }
     }

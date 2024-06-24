@@ -14,7 +14,6 @@ namespace Service
             InitializeComponent();
             this.activeuser = activeuser;
             eventsBase = new EventsDataBase(activeuser);
-            next_event_label.Text = eventsBase.NextEvent(activeuser.Id).ToString();
         }
         private void exit_button_Click(object sender, EventArgs e)
         {
@@ -75,6 +74,7 @@ namespace Service
             user_events_datagrid.Rows.Clear();
             eventsBase.WriteAllEventsinDataGrid(events_datagrid);
             eventsBase.WriteUserEventsinDataGrid(user_events_datagrid);
+            NextEvent();
         }
 
         private void signup_button_Click(object sender, EventArgs e)
@@ -95,12 +95,21 @@ namespace Service
                 eventsBase.WriteUserEventsinDataGrid(user_events_datagrid);
                 next_event_label.Text = eventsBase.NextEvent(activeuser.Id).ToString();
             }
+            NextEvent();
         }
 
         private void details_button_Click(object sender, EventArgs e)
         {
             Form form = new EventDetailsForm(eventsBase.GetEventId(Guid.Parse(events_datagrid[event_id_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString())));
             form.ShowDialog();
+        }
+        private void NextEvent() 
+        {
+            Event ev = eventsBase.NextEvent(activeuser.Id);
+            if (ev == null)
+                next_event_label.Text = "Вы пока не зарегестрировались ни на одно мероприятие";
+            else
+                next_event_label.Text =  ev.ToString();
         }
     }
 }

@@ -183,6 +183,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EventDetailsForm";
             this.Text = "DecriptionForm";
+            this.Load += new System.EventHandler(this.EventDetailsForm_Load);
             this.healder_panel.ResumeLayout(false);
             this.healder_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
