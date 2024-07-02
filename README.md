@@ -50,7 +50,8 @@
     - Привязка пользователей к мероприятиям.
     - Сохранение и чтение данных мероприятий из JSON файла.
 
-Upd:"Сервера отключены. Дальнейшая поддержка программы приостановлена."
+**Upd**:"Сервера отключены. Дальнейшая поддержка программы приостановлена."
+
 Ссылка на текст курсовой работы: (https://docs.google.com/document/d/1pYo9X6U2FbAgEXuIn4xbFwZZEXhh-CJB/edit?usp=sharing&ouid=100407089651884769888&rtpof=true&sd=true)
 
 Ссылка на презентацию курсовой работы: ([https://docs.google.com/presentation/d/1EV81cOqKMDCPyTnOD8r7DtMctK6zwlvo/edit?usp=sharing&ouid=100407089651884769888&rtpof=true&sd=true](https://docs.google.com/presentation/d/1cWfqkZvl1qZuFJAZib2DiMiM46gkTqnL/edit?usp=sharing&ouid=100407089651884769888&rtpof=true&sd=true))****
