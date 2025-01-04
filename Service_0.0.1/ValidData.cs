@@ -7,7 +7,7 @@ namespace Service
     public class ValidData
     {
         public bool RegestrationDataisValid(string username, string password, string repeatPassword, string role)
-        {
+        { 
             return ValidateUsername(username) && ValidatePassword(password, repeatPassword) && ValidateRole(role);
         }
 
@@ -30,41 +30,33 @@ namespace Service
 
         private bool ValidatePassword(string password, string repeatPassword)
         {
-            if (string.IsNullOrWhiteSpace(password))
-                return ShowError("Введите пароль.\n");
-            if (password.Length < 8)
-                return ShowError("Символов в пароле должно быть больше 8.\n");
-            if (Regex.IsMatch(password, @"\s"))
-                return ShowError("Нельзя использовать пробелы или табуляцию.\n");
-            if (!Regex.IsMatch(password, @"\d"))
-                return ShowError("Пароль должен содержать хотя бы одну цифру.\n");
-            if (Regex.IsMatch(password, @"[а-я]"))
-                return ShowError("Пароль не должен содержать кириллицу.\n");
-            if (!Regex.IsMatch(password, @"\W"))
-                return ShowError("Пароль должен содержать спецсимволы ('@', '#', '%', ...).\n");
-            if (password != repeatPassword)
-                return ShowError("Пароли не совпадают.\n");
+            string errors = "";
 
-            return true;
+            if (string.IsNullOrWhiteSpace(password)) errors += "Введите пароль.\n";
+            if (password.Length < 8) errors += "Символов в пароле должно быть больше 8.\n";
+            if (Regex.IsMatch(password, @"\s")) errors += "Нельзя использовать пробелы или табуляцию.\n";
+            if (!Regex.IsMatch(password, @"\d")) errors += "Пароль должен содержать хотя бы одну цифру.\n";
+            if (Regex.IsMatch(password, @"[а-я]")) errors += "Пароль не должен содержать кириллицу.\n";
+            if (!Regex.IsMatch(password, @"\W")) errors += "Пароль должен содержать спецсимволы ('@', '#', '%', ...).\n";
+            if (password != repeatPassword) errors += "Пароли не совпадают.\n";
+
+            return string.IsNullOrEmpty(errors) || ShowError(errors);
         }
 
         private bool ValidateUsername(string username)
         {
-            if (string.IsNullOrWhiteSpace(username))
-                return ShowError("Введите имя пользователя.\n");
-            if (username.Length < 3)
-                return ShowError("Символов в логине должно быть больше 3.\n");
-            if (Regex.IsMatch(username, @"[а-я]"))
-                return ShowError("Логин не должен содержать кириллицу.\n");
-            if (Regex.IsMatch(username, @"\W"))
-                return ShowError("Логин не должен содержать спецсимволы ('@', '#', '%', ...).\n");
-            if (Regex.IsMatch(username, @"\s"))
-                return ShowError("Нельзя использовать пробелы или табуляцию.\n");
+            string errors = "";
+
+            if (string.IsNullOrWhiteSpace(username)) errors += "Введите имя пользователя.\n";
+            if (username.Length < 3) errors += "Символов в логине должно быть больше 3.\n";
+            if (Regex.IsMatch(username, @"[а-я]")) errors += "Логин не должен содержать кириллицу.\n";
+            if (Regex.IsMatch(username, @"\W")) errors += "Логин не должен содержать спецсимволы ('@', '#', '%', ...).\n";
+            if (Regex.IsMatch(username, @"\s")) errors += "Нельзя использовать пробелы или табуляцию.\n";
 
             if (!(new UsersBase().GetUser(new User(username, null, null, Guid.Empty)) is null))
-                return ShowError("Данный логин уже занят.\n");
+                errors += "Данный логин уже занят.\n";
 
-            return true;
+            return string.IsNullOrEmpty(errors) || ShowError(errors);
         }
 
         private bool ShowError(string message)
