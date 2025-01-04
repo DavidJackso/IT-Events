@@ -11,14 +11,16 @@ namespace Service
 {
     public class UsersBase
     {
-        User ActiveUser;
-        static Dictionary<string, User> Users;
-        static string pathtobase = "data/bases/users.json";
+        readonly User ActiveUser;
+        private static Dictionary<string, User> Users;
+        private static readonly string pathtobase = "data/bases/users.json";
+
         public UsersBase(User activeuser)
         {
             ActiveUser = activeuser;
             ReadUsers();
         }
+
         public UsersBase()
         {
             ReadUsers();
@@ -26,66 +28,69 @@ namespace Service
 
         public void AddUser()
         {
-            ActiveUser.Password = HashingPassword(ActiveUser.Password);
-            Users.Add(ActiveUser.Username, ActiveUser);
+            ActiveUser.Password = HashPassword(ActiveUser.Password);
+            Users[ActiveUser.Username] = ActiveUser;
             ReWrite();
             MessageBox.Show("Регистрация прошла успешно!");
         }
-        private void ReWrite()
-        {
-            StreamWriter write = new StreamWriter(pathtobase, false);
-            JsonSerializer serializer = new JsonSerializer();
-            serializer.Formatting = Formatting.Indented;
-            serializer.Serialize(write, Users);
-            write.Close();
-        }
+
         public void AddPersonalData()
         {
             Users[ActiveUser.Username] = ActiveUser;
             ReWrite();
         }
+
+        public bool SucessLogin(User loginuser)
+        {
+            if (Users.TryGetValue(loginuser.Username, out var user))
+            {
+                return HashPassword(loginuser.Password) == user.Password;
+            }
+            return false;
+        }
+
+        public User GetUser(User needuser)
+        {
+            if (Users == null)
+            {
+                Users = new Dictionary<string, User>();
+            }
+            return Users.TryGetValue(needuser.Username, out User user) ? user : null;
+        }
+
         private void ReadUsers()
         {
             if (File.Exists(pathtobase))
             {
-                StreamReader stream = new StreamReader(pathtobase);
-                Users = JsonConvert.DeserializeObject<Dictionary<string, User>>(stream.ReadToEnd());
-                stream.Close();
+                using (var stream = new StreamReader(pathtobase))
+                {
+                    Users = JsonConvert.DeserializeObject<Dictionary<string, User>>(stream.ReadToEnd());
+                }
             }
             else
             {
                 Users = new Dictionary<string, User>();
-                MessageBox.Show("Файл с данными пользователей не найден");
+                MessageBox.Show("Файл с данными пользователей не найден.");
             }
         }
-        public bool SucessLogin(User loginuser)
+
+        private void ReWrite()
         {
-            if (Users.ContainsKey(loginuser.Username))
+            using (var write = new StreamWriter(pathtobase, false))
             {
-                User user = GetUser(loginuser);
-                if (HashingPassword(loginuser.Password) == user.Password)
-                    return true;
+                var serializer = new JsonSerializer { Formatting = Formatting.Indented };
+                serializer.Serialize(write, Users);
             }
-            return false;
         }
-        public User GetUser(User needuser)
-        {
-            if (Users == null)
-                Users = new Dictionary<string, User>();
-            if (Users.Count == 0)
-                return null;
 
-            if (Users.ContainsKey(needuser.Username))
-                return Users[needuser.Username];
-
-            return null;
-        }
-        private string HashingPassword(string password)
+        private string HashPassword(string password)
         {
-            MD5 md5 = MD5.Create();
-            byte[] inputBytes = Encoding.ASCII.GetBytes(password);
-            byte[] hashBytes = md5.ComputeHash(inputBytes);
-            return Convert.ToBase64String(hashBytes);
+            using (var md5 = MD5.Create())
+            {
+                var inputBytes = Encoding.ASCII.GetBytes(password);
+                var hashBytes = md5.ComputeHash(inputBytes);
+                return Convert.ToBase64String(hashBytes);
+            }
         }
     }
     public class User
@@ -95,6 +100,7 @@ namespace Service
         public readonly string Role;
         public readonly Guid Id;
         public PersonalInformation PersonalInfo { get; set; }
+
         public User(string username, string password, string role, Guid id, PersonalInformation personal = null)
         {
             Username = username;
@@ -111,9 +117,5 @@ namespace Service
         public string Email { get; set; }
         public string Status { get; set; }
         public string Organization { get; set; }
-
-        public PersonalInformation()
-        {
-        }
     }
 }

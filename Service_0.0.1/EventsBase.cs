@@ -166,15 +166,10 @@ namespace Service
         }
         public Event NextEvent(Guid id)
         {
-            Event next = Events[UserstoEvents[id][0]];
-            foreach (var e in UserstoEvents[id])
-            {
-                Event et = Events[e];
-                if (next.EventData >= et.EventData)
-                    next = et;
-            }
-            return next;
-
+            return UserstoEvents[id]
+                .Select(e => Events[e])
+                .OrderBy(et => et.EventData)
+                .FirstOrDefault();
         }
         private bool CheckRegestrationStatus(DateTime regestarationclosedata)
         {

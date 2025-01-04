@@ -6,16 +6,19 @@ namespace Service
 {
     public partial class MemberForm : Form
     {
-        User activeuser;
-        UsersBase usersBase = new UsersBase();
-        EventsBase eventsBase;
+        private readonly User activeuser;
+        private readonly UsersBase usersBase;
+        private readonly EventsBase eventsBase;
+
         public MemberForm(User activeuser)
         {
             InitializeComponent();
             this.activeuser = activeuser;
+            usersBase = new UsersBase();
             eventsBase = new EventsBase(activeuser);
             next_event_label.Text = eventsBase.NextEvent(activeuser.Id).ToString();
         }
+
         private void exit_button_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -23,25 +26,21 @@ namespace Service
 
         private void changeprofiledata_button_Click(object sender, EventArgs e)
         {
-            firstname_textbox.ReadOnly = false;
-            lastname_textbox.ReadOnly = false;
-            email_textbox.ReadOnly = false;
-            organization_textbox.ReadOnly = false;
+            SetProfileDataReadOnly(false);
             changeprofiledata_button.Visible = false;
             saveprofiledata_button.Visible = true;
         }
 
         private void saveprofiledata_button_Click(object sender, EventArgs e)
         {
-            RechangePersonalInfo(activeuser);
-            usersBase = new UsersBase(activeuser);
+            RechangePersonalInfo();
             usersBase.AddPersonalData();
-            ReadPersonalInfo(activeuser);
-            usersBase.AddPersonalData();
+            ReadPersonalInfo();
             saveprofiledata_button.Visible = false;
             changeprofiledata_button.Visible = true;
         }
-        private void ReadPersonalInfo(User activeuser)
+
+        private void ReadPersonalInfo()
         {
             if (activeuser.PersonalInfo != null)
             {
@@ -49,24 +48,27 @@ namespace Service
                 lastname_textbox.Text = activeuser.PersonalInfo.LastName;
                 email_textbox.Text = activeuser.PersonalInfo.Email;
                 organization_textbox.Text = activeuser.PersonalInfo.Organization;
-                firstname_textbox.ReadOnly = true;
-                lastname_textbox.ReadOnly = true;
-                email_textbox.ReadOnly = true;
-                organization_textbox.ReadOnly = true;
+                SetProfileDataReadOnly(true);
             }
         }
-        private void RechangePersonalInfo(User activeuser)
+
+        private void RechangePersonalInfo()
         {
-            firstname_textbox.ReadOnly = false;
-            lastname_textbox.ReadOnly = false;
-            email_textbox.ReadOnly = false;
-            organization_textbox.ReadOnly = false;
-            PersonalInformation personalinfo = new PersonalInformation();
-            personalinfo.FirstName = firstname_textbox.Text;
-            personalinfo.LastName = lastname_textbox.Text;
-            personalinfo.Email = email_textbox.Text;
-            personalinfo.Organization = organization_textbox.Text;
-            activeuser.PersonalInfo = personalinfo;
+            activeuser.PersonalInfo = new PersonalInformation
+            {
+                FirstName = firstname_textbox.Text,
+                LastName = lastname_textbox.Text,
+                Email = email_textbox.Text,
+                Organization = organization_textbox.Text
+            };
+        }
+
+        private void SetProfileDataReadOnly(bool isReadOnly)
+        {
+            firstname_textbox.ReadOnly = isReadOnly;
+            lastname_textbox.ReadOnly = isReadOnly;
+            email_textbox.ReadOnly = isReadOnly;
+            organization_textbox.ReadOnly = isReadOnly;
         }
 
         private void MemberForm_Load(object sender, EventArgs e)
@@ -84,23 +86,25 @@ namespace Service
                 MessageBox.Show("Заполните персональную информацию!", "Ошибка регистрации на мероприятие");
                 return;
             }
-            else if (events_datagrid[event_regestration_status_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString() == "закрыта")
+
+            if (events_datagrid[event_regestration_status_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString() == "закрыта")
             {
                 MessageBox.Show("Регистрация на мероприятие закрыта!", "Ошибка регистрации на мероприятие");
                 return;
             }
-            else
-            {
-                eventsBase.SignUpinEvent(Guid.Parse(events_datagrid[event_id_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString()));
-                eventsBase.WriteUserEventsinDataGrid(user_events_datagrid);
-                next_event_label.Text = eventsBase.NextEvent(activeuser.Id).ToString();
-            }
+
+            eventsBase.SignUpinEvent(Guid.Parse(events_datagrid[event_id_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString()));
+            eventsBase.WriteUserEventsinDataGrid(user_events_datagrid);
+            next_event_label.Text = eventsBase.NextEvent(activeuser.Id).ToString();
         }
 
         private void details_button_Click(object sender, EventArgs e)
         {
-            Form form = new EventDetailsForm(eventsBase.GetEventId(Guid.Parse(events_datagrid[event_id_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString())));
-            form.ShowDialog();
+            var eventId = Guid.Parse(events_datagrid[event_id_column.Index, events_datagrid.CurrentCell.RowIndex].Value.ToString());
+            using (var form = new EventDetailsForm(eventsBase.GetEventId(eventId)))
+            {
+                form.ShowDialog();
+            }
         }
     }
 }
