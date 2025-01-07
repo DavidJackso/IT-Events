@@ -136,7 +136,7 @@
             this.regestration.Padding = new System.Windows.Forms.Padding(3);
             this.regestration.Size = new System.Drawing.Size(300, 315);
             this.regestration.TabIndex = 1;
-            this.regestration.Text = "Регестрация";
+            this.regestration.Text = "Регистрация";
             // 
             // role_rbutton_organizator
             // 

@@ -14,7 +14,7 @@ namespace Service
         {
             InitializeComponent();
             this.activeuser = activeuser;
-            usersBase = new UsersBase();
+            usersBase = new UsersBase(activeuser);
             eventsBase = new EventsBase(activeuser);
             next_event_label.Text = eventsBase.NextEvent(activeuser.Id).ToString();
         }

@@ -7,12 +7,13 @@ namespace Service
     public partial class OraganizatorForm : Form
     {
         private readonly User activeuser;
-        private readonly UsersBase usersBase = new UsersBase();
+        private readonly UsersBase usersBase;
         private readonly EventsBase eventsBase;
 
         public OraganizatorForm(User activeuser)
         {
             this.activeuser = activeuser;
+            usersBase = new UsersBase(activeuser);
             eventsBase = new EventsBase(activeuser);
             InitializeComponent();
         }
