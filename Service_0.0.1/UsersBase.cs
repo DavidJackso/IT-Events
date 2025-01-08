@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Service_0._0._1;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Service
 {
-    public class UsersBase
+    public class UsersBase:IDB
     {
         readonly User ActiveUser;
         private static Dictionary<string, User> Users;
@@ -18,26 +19,26 @@ namespace Service
         public UsersBase(User activeuser)
         {
             ActiveUser = activeuser;
-            ReadUsers();
+            Deserileze();
         }
 
         public UsersBase()
         {
-            ReadUsers();
+            Deserileze();
         }
 
         public void AddUser()
         {
             ActiveUser.Password = HashPassword(ActiveUser.Password);
             Users[ActiveUser.Username] = ActiveUser;
-            ReWrite();
+            Serileze();
             MessageBox.Show("Регистрация прошла успешно!");
         }
 
         public void AddPersonalData()
         {
             Users[ActiveUser.Username] = ActiveUser;
-            ReWrite();
+            Serileze();
         }
 
         public bool SucessLogin(User loginuser)
@@ -58,7 +59,7 @@ namespace Service
             return Users.TryGetValue(needuser.Username, out User user) ? user : null;
         }
 
-        private void ReadUsers()
+        public void Deserileze()
         {
             if (File.Exists(pathtobase))
             {
@@ -74,7 +75,7 @@ namespace Service
             }
         }
 
-        private void ReWrite()
+        public void Serileze()
         {
             using (var write = new StreamWriter(pathtobase, false))
             {

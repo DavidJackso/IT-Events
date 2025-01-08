@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Service_0._0._1;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Service
 {
-    public class EventsBase
+    public class EventsBase:IDB
     {
         private readonly User activeUser;
         public static Dictionary<Guid, Event> Events;
@@ -23,10 +24,10 @@ namespace Service
         public EventsBase(User activeuser)
         {
             activeUser = activeuser;
-            LoadEvents();
+            Deserileze();
         }
 
-        private void SaveBase()
+        public void Serileze()
         {
             StreamWriter write = new StreamWriter(pathtobaseevents, false);
             JsonSerializer serializer = new JsonSerializer();
@@ -37,7 +38,7 @@ namespace Service
             serializer.Serialize(writer, UserstoEvents);
             writer.Close();
         }
-        private void LoadEvents()
+        public void Deserileze()
         {
             if (File.Exists(pathtobaseevents))
             {
@@ -93,7 +94,7 @@ namespace Service
                 UserstoEvents.Add(activeUser.Id, ids);
             }
 
-            SaveBase();
+            Serileze();
         }
         public void ChangeEvent(Guid id, Event ev)
         {
@@ -119,7 +120,7 @@ namespace Service
                         UserstoEvents.Remove(i);
                     }
                 }
-            SaveBase();
+            Serileze();
         }
         public void WriteAllEventsinDataGrid(DataGridView dgv)
         {
@@ -130,7 +131,7 @@ namespace Service
                 ev.StatusRegestration = CheckRegestrationStatus(ev.DataEndRegestration);
                 dgv.Rows.Add(ev.Id, ev.Name, ev.Type, ev.EventLocation, ev.EventData, ev.DataEndRegestration, ev.Organizator, RegesrationStatus(ev.StatusRegestration));
             }
-            SaveBase();
+            Serileze();
         }
         public void WriteMembers(Event ev, DataGridView dgv)
         {

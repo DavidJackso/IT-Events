@@ -118,6 +118,7 @@
       <DependentUpon>EventDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EventsBase.cs" />
+    <Compile Include="IDB.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
