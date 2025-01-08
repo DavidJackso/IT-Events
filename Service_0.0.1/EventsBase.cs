@@ -11,8 +11,8 @@ namespace Service
     {
         private readonly User activeUser;
         public static Dictionary<Guid, Event> Events;
-        public static Dictionary<Guid, List<Guid>> UserstoEvents;
-        public static List<Guid> UserEvents = new List<Guid>();
+        static Dictionary<Guid, List<Guid>> UserstoEvents;
+        static List<Guid> UserEvents = new List<Guid>();
         static string pathtobaseevents = "data/bases/events.json";
         static string pathtobasuseridtoeventsid = "data/bases/usertoevents.json";
 
@@ -76,11 +76,8 @@ namespace Service
         }
         public void CheckRegesrationEnd()
         {
-            foreach (var item in Events)
-            {
-                if (item.Value.DataEndRegestration <= DateTime.Now)
-                    item.Value.StatusRegestration = false;
-            }
+            Events.Where(e => e.Value.DataEndRegestration <= DateTime.Now)
+                .Select(e => e.Value.StatusRegestration = false);
         }
         public void AddEvent(Event ev)
         {
